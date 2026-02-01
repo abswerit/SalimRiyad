@@ -49,13 +49,14 @@
             border-radius: 9999px;
             animation: bounce 1s infinite ease-in-out;
             animation-play-state: paused;
-            height: 10%;
+            height: 20%; /* Base height */
+            min-height: 4px;
         }
 
         /* Animation Keyframes */
         @keyframes bounce {
-            0%, 100% { height: 10%; }
-            50% { height: 100%; }
+            0%, 100% { height: 20%; }
+            50% { height: 80%; }
         }
 
         /* Animation Delays for random effect */
@@ -125,27 +126,27 @@
             
             <h2 class="text-xs font-bold tracking-widest text-amber-400 uppercase mb-4 border-b border-amber-400/30 pb-1">Now Playing</h2>
             
-            <!-- Album Art (Static) -->
-            <div class="relative w-48 h-48 md:w-64 md:h-64 mb-4 group">
+            <!-- Album Art (Static) with Visualizer Overlay -->
+            <div class="relative w-48 h-48 md:w-64 md:h-64 mb-5 group">
                 <div class="absolute inset-0 bg-gradient-to-tr from-amber-500 to-emerald-500 rounded-2xl opacity-20 blur-lg group-hover:opacity-40 transition-opacity duration-500"></div>
                 <div class="relative w-full h-full rounded-2xl border-[4px] border-emerald-900 shadow-2xl overflow-hidden flex items-center justify-center bg-emerald-950 ring-2 ring-amber-500/50">
                     <!-- Artist Image -->
                     <img src="https://raw.githubusercontent.com/abswerit/SalimRiyad/main/salim.jpg" alt="মাওলানা সেলিম রিয়াদ হক্কানী" class="w-full h-full object-cover transform transition duration-700 hover:scale-110">
+                    
+                    <!-- Visualizer Bars Overlay -->
+                    <div id="visualizerContainer" class="absolute bottom-0 left-0 right-0 flex justify-center items-end h-16 gap-1.5 pb-2 w-full bg-gradient-to-t from-emerald-950/90 to-transparent z-20">
+                        <div class="visualizer-bar"></div>
+                        <div class="visualizer-bar"></div>
+                        <div class="visualizer-bar"></div>
+                        <div class="visualizer-bar"></div>
+                        <div class="visualizer-bar"></div>
+                        <div class="visualizer-bar"></div>
+                        <div class="visualizer-bar"></div>
+                        <div class="visualizer-bar"></div>
+                        <div class="visualizer-bar"></div>
+                        <div class="visualizer-bar"></div>
+                    </div>
                 </div>
-            </div>
-
-            <!-- Visualizer Bars -->
-            <div id="visualizerContainer" class="flex justify-center items-end h-12 gap-1.5 mb-4 w-full px-12">
-                <div class="visualizer-bar"></div>
-                <div class="visualizer-bar"></div>
-                <div class="visualizer-bar"></div>
-                <div class="visualizer-bar"></div>
-                <div class="visualizer-bar"></div>
-                <div class="visualizer-bar"></div>
-                <div class="visualizer-bar"></div>
-                <div class="visualizer-bar"></div>
-                <div class="visualizer-bar"></div>
-                <div class="visualizer-bar"></div>
             </div>
 
             <!-- Song Info -->
